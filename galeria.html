@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecoflow S+ Galería</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #0c0f2f, #3b2fc9);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CONTENEDOR GENERAL */
+.container{
+    width:95%;
+    max-width:1300px;
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap:25px;
+    align-items:center;
+}
+
+/* FILAS SUPERIOR E INFERIOR */
+.top-row, .bottom-row{
+    grid-column: 1 / 4;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:25px;
+}
+
+/* IMAGENES LATERALES */
+.side-left{
+    grid-column:1;
+    grid-row:2;
+}
+
+.side-right{
+    grid-column:3;
+    grid-row:2;
+}
+
+/* CENTRO */
+.center{
+    grid-column:2;
+    grid-row:2;
+    text-align:center;
+    color:white;
+}
+
+/* CAJAS DE IMAGEN */
+.image-box{
+    background:white;
+    padding:6px;
+    border-radius:8px;
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor:pointer;
+}
+
+.image-box img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+/* HOVER */
+.image-box:hover{
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* ANIMACION */
+@keyframes float{
+    0%{ transform: translateY(0px); }
+    50%{ transform: translateY(-10px); }
+    100%{ transform: translateY(0px); }
+}
+
+/* TITULOS */
+.title-box{
+    border:2px solid white;
+    display:inline-block;
+    padding:15px 70px;
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.subtitle-box{
+    border:2px solid white;
+    display:inline-block;
+    padding:10px 60px;
+    font-size:40px;
+    background:white;
+    color:#3b2fc9;
+    font-weight:bold;
+}
+
+/* LIGHTBOX */
+#lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+#close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- FILA SUPERIOR -->
+    <div class="top-row">
+        <div class="image-box"><img src="img 1.jpeg" alt=""></div>
+        <div class="image-box"><img src="2.jpeg" alt=""></div>
+        <div class="image-box"><img src="3.jpeg" alt=""></div>
+        <div class="image-box"><img src="4.jpeg" alt=""></div>
+    </div>
+
+    <!-- IZQUIERDA -->
+    <div class="side-left">
+        <div class="image-box">
+            <img src="5.jpeg" alt="">
+        </div>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="center">
+        <div class="title-box">Ecoflow S+</div><br>
+        <div class="subtitle-box">Galería</div>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="side-right">
+        <div class="image-box">
+            <img src="6.jpeg" alt="">
+        </div>
+    </div>
+
+    <!-- FILA INFERIOR -->
+    <div class="bottom-row">
+        <div class="image-box"><img src="7.jpeg" alt=""></div>
+        <div class="image-box"><img src="8.jpeg" alt=""></div>
+        <div class="image-box"><img src="9.jpeg" alt=""></div>
+        <div class="image-box"><img src="10.jpeg" alt=""></div>
+    </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span id="close">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<script>
+const images = document.querySelectorAll(".image-box img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+
+images.forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+    if(e.target !== lightboxImg){
+        lightbox.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

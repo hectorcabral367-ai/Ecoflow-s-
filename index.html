@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoFlow S+</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Fondo */
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df') no-repeat center/cover;
+    filter: brightness(0.6);
+    z-index:-2;
+}
+
+/* Capa extra */
+body::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df') no-repeat center/cover;
+    opacity:0.35;
+    z-index:-1;
+}
+
+/* Línea horizontal centrada */
+.linea{
+    position:absolute;
+    width:100%;
+    height:14px;
+    background:black;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:1;
+    box-shadow:0 0 40px rgba(0,255,255,0.6);
+}
+
+/* Logo central */
+.logo-container{
+    position:relative;
+    width:320px;
+    height:320px;
+    background:white;
+    border-radius:50%;
+    border:15px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:2;
+    box-shadow:0 0 40px rgba(0,255,255,0.6);
+}
+
+.logo-container img{
+    width:200%;
+}
+
+/* Botones */
+.btn{
+    position:absolute;
+    padding:14px 30px;
+    border-radius:25px;
+    border:none;
+    font-size:18px;
+    cursor:pointer;
+    background:#e5e5e5;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(0,255,255,0.4);
+    top:50%;
+    transform:translate(-50%, -50%);
+    z-index:3;
+}
+
+.btn:hover{
+    background:#00c3ff;
+    color:white;
+    transform:translate(-50%, -50%) scale(1.05);
+}
+
+/* Posiciones */
+
+.btn-inicio{
+    left:15%;
+}
+
+.btn-servicios{
+    left:30%;
+}
+
+.btn-galeria{
+    left:70%;
+}
+
+.btn-patrocinadores{
+    left:85%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="linea"></div>
+
+<button class="btn btn-inicio" onclick="irInicio()">Inicio</button>
+<button class="btn btn-servicios" onclick="irServicios()">nosotros</button>
+
+<div class="logo-container">
+    <img src="logon_eco-removebg-preview (1).png" alt="EcoFlow Logo">
+</div>
+
+<button class="btn btn-galeria" onclick="irGaleria()">Galería</button>
+<button class="btn btn-patrocinadores" onclick="irpatrocinadores()">Patrocinio</button>
+
+<script>
+function irInicio(){
+    window.location.href = "inicio.html";
+}
+
+function irServicios(){
+    window.location.href = "servicios.html";
+}
+
+function irGaleria(){
+    window.location.href = "galeria.html";
+}
+
+function irpatrocinadores(){
+    window.location.href = "patrocinadores.html";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

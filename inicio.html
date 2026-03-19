@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Energía Eólica</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      color: white;
+      background: #123456;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 🔥 MITAD SUPERIOR */
+    .top {
+      height: 50vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 80px;
+    }
+
+    .top img.bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 65%;
+      z-index: 0;
+    }
+
+    .top::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+    }
+
+    /* 👉 IMAGEN PRINCIPAL */
+    .main-image {
+      z-index: 2;
+      margin-top: 100px;
+      position: fixed;
+      top: 20px;
+      right: 150px;
+      z-index: 9999;
+    }
+
+    .main-image img {
+      width: 400px;
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+      animation: floatSoft 6s ease-in-out infinite;
+    }
+
+    /* 🔥 ANIMACIÓN SUAVE */
+    @keyframes floatSoft {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-10px) translateX(3px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+
+    /* 🔥 MITAD INFERIOR */
+    .bottom {
+      height: 50vh;
+      background: #123456;
+      display: flex;
+      align-items: center;
+      padding-left: 80px;
+    }
+
+    .text-section {
+      max-width: 520px;
+    }
+
+    .title {
+      font-size: 64px;
+      font-weight: 900;
+      margin-bottom: 25px;
+      color: black;
+      text-shadow:
+        -3px -3px 0 white,
+         3px -3px 0 white,
+        -3px  3px 0 white,
+         3px  3px 0 white;
+    }
+
+    .description-box {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 22px;
+      border-radius: 10px;
+      line-height: 1.6;
+      font-size: 17px;
+      backdrop-filter: blur(6px);
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 46px;
+      }
+
+      .top {
+        justify-content: center;
+        padding-right: 0;
+      }
+
+      .bottom {
+        padding: 40px;
+        text-align: center;
+      }
+
+      .main-image img {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <!-- 🔥 MITAD SUPERIOR -->
+    <div class="top">
+      <img src="Captura de pantalla 2026-02-12 114329.png" class="bg" alt="Fondo ciudad">
+
+      <div class="main-image">
+        <img src="Captura de pantalla 2026-02-12 113435.png" alt="Ciudad inteligente">
+      </div>
+    </div>
+
+    <!-- 🔥 MITAD INFERIOR -->
+    <div class="bottom">
+      <div class="text-section">
+        <h1 class="title">Introducción</h1>
+
+        <div class="description-box">
+          Este proyecto presenta una granja eólica diseñada para abastecer una ciudad inteligente a escala, como una alternativa al uso de energías no renovables. A través de la tecnología y el uso de sistemas informáticos, se demuestra cómo la energía del viento puede contribuir al desarrollo sostenible y al cuidado del medio ambiente.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
+
